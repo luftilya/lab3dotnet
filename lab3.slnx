@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Элементы решения/">
     <File Path="README.md" />
+    <File Path="self_icon.ico" />
   </Folder>
   <Project Path="mainprog/mainprog.csproj" />
   <Project Path="wonderful_tools_numbers/wonderful_numbers_tools.csproj" Id="951c2067-602b-4628-8328-0776ae6cd31f" />

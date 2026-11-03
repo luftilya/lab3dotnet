@@ -6,7 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>lab3</AssemblyName>
+    <ApplicationIcon>self_icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="self_icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="pics\" />
