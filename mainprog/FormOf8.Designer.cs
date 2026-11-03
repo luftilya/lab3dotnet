@@ -33,6 +33,7 @@
             textBox = new TextBox();
             button = new Button();
             sum_label = new Label();
+            help_label = new Label();
             SuspendLayout();
             // 
             // history_label
@@ -79,17 +80,29 @@
             // 
             sum_label.AutoSize = true;
             sum_label.Font = new Font("Segoe UI", 28F, FontStyle.Bold);
-            sum_label.Location = new Point(371, 375);
+            sum_label.Location = new Point(56, 363);
+            sum_label.MinimumSize = new Size(700, 62);
             sum_label.Name = "sum_label";
-            sum_label.Size = new Size(0, 62);
+            sum_label.Size = new Size(700, 62);
             sum_label.TabIndex = 4;
             sum_label.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // help_label
+            // 
+            help_label.AutoSize = true;
+            help_label.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            help_label.Location = new Point(250, 159);
+            help_label.Name = "help_label";
+            help_label.Size = new Size(290, 31);
+            help_label.TabIndex = 5;
+            help_label.Text = "N является натуральным";
             // 
             // FormOf8
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 502);
+            Controls.Add(help_label);
             Controls.Add(sum_label);
             Controls.Add(button);
             Controls.Add(textBox);
@@ -108,5 +121,6 @@
         private TextBox textBox;
         private Button button;
         private Label sum_label;
+        private Label help_label;
     }
 }

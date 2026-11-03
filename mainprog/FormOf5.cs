@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using wonderful_numbers_tools;
 
 namespace mainprog;
 
@@ -17,17 +18,6 @@ public partial class FormOf5 : Form
         if (!string.IsNullOrWhiteSpace(textBox.Text) 
             && double.TryParse(textBox.Text, out double eps)
             && eps > 0)
-        {
-            double sum = 0, 
-                mem = 1, 
-                
-                f = 1;
-            int n = 2;
-
-            while (mem >= eps)
-                sum += mem = 1.0 / Math.Sqrt(f *= n++);
-
-            sum_label.Text = sum.ToString();
-        }
+            sum_label.Text = NumbersTools.FindRowSum(eps).ToString();
     }
 }

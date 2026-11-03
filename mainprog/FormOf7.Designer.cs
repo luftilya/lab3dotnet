@@ -69,9 +69,10 @@
             // 
             ave_label.AutoSize = true;
             ave_label.Font = new Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            ave_label.Location = new Point(254, 306);
+            ave_label.Location = new Point(58, 309);
+            ave_label.MinimumSize = new Size(700, 81);
             ave_label.Name = "ave_label";
-            ave_label.Size = new Size(0, 81);
+            ave_label.Size = new Size(700, 81);
             ave_label.TabIndex = 3;
             ave_label.TextAlign = ContentAlignment.MiddleCenter;
             // 

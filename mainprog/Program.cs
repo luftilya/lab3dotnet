@@ -1,4 +1,5 @@
 using System;
+using wonderful_numbers_tools;
 namespace mainprog;
 
 internal static class Program
@@ -8,14 +9,10 @@ internal static class Program
     {
         ApplicationConfiguration.Initialize();
         
-        string? choosed_task;
-        
         while (true)
         {
             Console.Clear();
-            Console.WriteLine("Лабораторная работа №3. Выполнена Ильей Зеленевым и Станиславом Сахаровым, бТИИ-251.");
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            Console.WriteLine("Меню заданий.");
+            Console.WriteLine("Лабораторная работа №3. Выполнена Ильей Зеленевым и Станиславом Сахаровым, бТИИ-251, вариант 1.");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("~2) Среди заданных чисел найти количество двухзначных чисел.");
             Console.WriteLine("~3) Даны целые числа К и N(N> 0). Вывести N раз число К.");
@@ -25,43 +22,29 @@ internal static class Program
             Console.WriteLine("~7) Найти среднее арифметическое четных цифр числа.");
             Console.WriteLine("~8) Найти сумму факториалов.");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            Console.WriteLine("Для выбора заданий нужно выбрать его номер, ввести и нажать ENTER на клавиатуре.");
+            Console.Write("Для выбора заданий нужно выбрать его номер, ввести и нажать ENTER на клавиатуре: ");
+
+            string? input = Console.ReadLine();
             
-            choosed_task = Console.ReadLine();
-            
-            switch (choosed_task)
+            switch (input)
             {
                 case "2":
                     {
                         while (true)
                         {
-                            var count = 0;
-
                             Console.Clear();
                             Console.WriteLine("Среди заданных чисел найти кол-во двузначных.");
-                            Console.WriteLine("Введите строку с числами через пробел, оканчивающуюся ПРОБЕЛОМ. Для выхода нажмите Enter.");
+                            Console.WriteLine("Введите строку с числами через пробел. Для выхода нажмите Enter.");
                             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                             Console.Write("~ Введите последовательность: ");
+
+                            input = Console.ReadLine();
                             
-                            string? numbers = Console.ReadLine();
-                            
-                            if (string.IsNullOrWhiteSpace(numbers))
+                            if (string.IsNullOrWhiteSpace(input))
                                 break;
 
-                            var double_digit = "";
-
-                            for (int i = 0; i < numbers.Length; i++)
-                                if (numbers[i] >= '0' && numbers[i] <= '9' || numbers[i] == '-')
-                                    double_digit += numbers[i];
-                                else
-                                    if (!string.IsNullOrWhiteSpace(double_digit) && (double_digit.Length == 2 || (double_digit[0] == '-' && double_digit.Length == 3)))
-                                    {
-                                        ++count;
-                                        double_digit = "";
-                                    }
-
                             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                            Console.WriteLine($"~ Кол-во двузначных ч: {count}");
+                            Console.WriteLine($"~ Кол-во двузначных ч: {NumbersTools.HowMuchDoubleDigitsNumbers(input)}.");
                             Console.ReadKey();
                         }
                         break;
@@ -75,7 +58,7 @@ internal static class Program
                             Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                             Console.Write("! Введите целое число K: ");
 
-                            string? input = Console.ReadLine();
+                            input = Console.ReadLine();
 
                             if (string.IsNullOrWhiteSpace(input))
                                 break;
@@ -118,30 +101,13 @@ internal static class Program
                             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                             Console.Write("~ Дайте последовательность целых чисел: ");
 
-                            string? input = Console.ReadLine();
+                            input = Console.ReadLine();
 
                             if (string.IsNullOrWhiteSpace(input))
                                 break;
 
                             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-
-                            int i = 0, c = 0;
-                            string n = "";
-
-                            while (input is not null && i < input.Length)
-                            {
-                                if ((input[i] >= '1' && input[i] <= '9') || input[i] == '-')
-                                    n += input[i];
-                                else if (n != "")
-                                {
-                                    c++;
-                                    n = "";
-                                }
-
-                                i++;
-                            }
-
-                            Console.WriteLine($"~ Кол-во чисел: {c}");
+                            Console.WriteLine($"~ Кол-во чисел: {NumbersTools.HowMuchNumbers(input)}");
                             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                             Console.ReadKey();
                         }
@@ -159,10 +125,6 @@ internal static class Program
                 case "8":
                         Application.Run(new FormOf8());
                         break;
-                default:
-                    Console.WriteLine($"Вы ввели {choosed_task}, а такого задания нет!");
-                    Console.ReadKey();
-                    break;
             }
         }
     }

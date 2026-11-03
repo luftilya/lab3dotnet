@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using wonderful_numbers_tools;
 
 namespace mainprog;
 
@@ -18,13 +19,6 @@ public partial class FormOf8 : Form
         if (!string.IsNullOrWhiteSpace(textBox.Text)
             && int.TryParse(textBox.Text, out int n)
             && n > 0)
-        {
-            int sum = 0, mem = 1;
-
-            for (int i = 1; i <= n; i++)
-                sum += mem *= i;
-
-            sum_label.Text = sum.ToString();
-        }
+            sum_label.Text = NumbersTools.SumFacts(n).ToString();
     }
 }

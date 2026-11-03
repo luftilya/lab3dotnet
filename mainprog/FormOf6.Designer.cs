@@ -38,6 +38,7 @@
             listBox = new ListBox();
             sum_textlabel = new Label();
             sum_label = new Label();
+            help_label = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -65,7 +66,7 @@
             // textBox
             // 
             textBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox.Location = new Point(460, 174);
+            textBox.Location = new Point(449, 201);
             textBox.Name = "textBox";
             textBox.Size = new Size(168, 47);
             textBox.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             step_textlabel.AutoSize = true;
             step_textlabel.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            step_textlabel.Location = new Point(372, 174);
+            step_textlabel.Location = new Point(361, 201);
             step_textlabel.Name = "step_textlabel";
             step_textlabel.Size = new Size(82, 41);
             step_textlabel.TabIndex = 3;
@@ -93,7 +94,7 @@
             // button
             // 
             button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button.Location = new Point(384, 237);
+            button.Location = new Point(373, 264);
             button.Name = "button";
             button.Size = new Size(235, 51);
             button.TabIndex = 5;
@@ -105,7 +106,7 @@
             // 
             listBox.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
             listBox.FormattingEnabled = true;
-            listBox.Location = new Point(124, 328);
+            listBox.Location = new Point(113, 355);
             listBox.Name = "listBox";
             listBox.Size = new Size(330, 274);
             listBox.TabIndex = 6;
@@ -114,7 +115,7 @@
             // 
             sum_textlabel.AutoSize = true;
             sum_textlabel.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            sum_textlabel.Location = new Point(528, 409);
+            sum_textlabel.Location = new Point(517, 436);
             sum_textlabel.Name = "sum_textlabel";
             sum_textlabel.Size = new Size(445, 41);
             sum_textlabel.TabIndex = 7;
@@ -124,17 +125,30 @@
             // 
             sum_label.AutoSize = true;
             sum_label.Font = new Font("Segoe UI Black", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            sum_label.Location = new Point(618, 487);
+            sum_label.Location = new Point(521, 513);
+            sum_label.MinimumSize = new Size(450, 62);
             sum_label.Name = "sum_label";
-            sum_label.Size = new Size(0, 62);
+            sum_label.Size = new Size(450, 62);
             sum_label.TabIndex = 8;
+            sum_label.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // help_label
+            // 
+            help_label.AutoSize = true;
+            help_label.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            help_label.Location = new Point(410, 167);
+            help_label.Name = "help_label";
+            help_label.Size = new Size(247, 31);
+            help_label.TabIndex = 9;
+            help_label.Text = "Шаг должен быть > 0";
             // 
             // FormOf6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1033, 643);
+            ClientSize = new Size(1033, 682);
+            Controls.Add(help_label);
             Controls.Add(sum_label);
             Controls.Add(sum_textlabel);
             Controls.Add(listBox);
@@ -163,5 +177,6 @@
         private ListBox listBox;
         private Label sum_textlabel;
         private Label sum_label;
+        private Label help_label;
     }
 }
