@@ -44,7 +44,7 @@ internal static class Program
                                 break;
 
                             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                            Console.WriteLine($"~ Кол-во двузначных ч: {NumbersTools.HowMuchDoubleDigitsNumbers(input)}.");
+                            Console.WriteLine($"~ Кол-во двузначных ч: {NumbersTools.HowMuchDoubleDigitsNumbers(input, ' ')}.");
                             Console.ReadKey();
                         }
                         break;

@@ -122,8 +122,8 @@
             // 
             // FormOf5
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Controls.Add(sum_label);
@@ -134,7 +134,11 @@
             Controls.Add(history2_label);
             Controls.Add(history1_label);
             Controls.Add(pictureBox);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormOf5";
+            RightToLeft = RightToLeft.No;
             Text = "Найти сумму бесконечного ряда";
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);

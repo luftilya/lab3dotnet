@@ -85,6 +85,9 @@
             Controls.Add(button);
             Controls.Add(textBox);
             Controls.Add(history_label);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormOf7";
             Text = "Найти среднее арифметическое чётных цифр числа";
             ResumeLayout(false);

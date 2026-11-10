@@ -144,8 +144,8 @@
             // 
             // FormOf6
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1033, 682);
             Controls.Add(help_label);
@@ -158,6 +158,9 @@
             Controls.Add(textBox);
             Controls.Add(history_label);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormOf6";
             Text = "Табулирование функции";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

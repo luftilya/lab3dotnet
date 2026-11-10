@@ -10,11 +10,11 @@ namespace wonderful_numbers_tools
 {
     public static class NumbersTools
     {
-        public static int HowMuchDoubleDigitsNumbers(string numbers_string)
+        public static int HowMuchDoubleDigitsNumbers(string numbers_string, char separator)
         {
             int count = 0;
 
-            string[] numbers = numbers_string.Split(' ');
+            string[] numbers = numbers_string.Split(separator);
 
             foreach (string number in numbers)
                 if (int.TryParse(number, out int value))
@@ -77,7 +77,7 @@ namespace wonderful_numbers_tools
 
                 sum += Math.Sqrt(expr);
 
-                listBox.Items.Add("x(" + (listBox.Items.Count + 1) + ") = " + mem.ToString());
+                listBox.Items.Add("x(" + (listBox.Items.Count + 1) + ") = " + mem.ToString("F8"));
             }
 
             return sum;

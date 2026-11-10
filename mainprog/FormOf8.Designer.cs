@@ -108,6 +108,9 @@
             Controls.Add(textBox);
             Controls.Add(n_textlabel);
             Controls.Add(history_label);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormOf8";
             Text = "Найти сумму факториалов";
             ResumeLayout(false);
